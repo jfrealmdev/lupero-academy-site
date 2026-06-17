@@ -9,27 +9,15 @@
     display: none;
   }
 
-  .top-nav__mobile-toggle {
-    display: flex;
-  }
-
   /* Hero */
   .hero {
     padding: 80px 24px 60px;
     min-height: auto;
   }
 
-  .hero__title {
-    font-size: 46px;
-  }
-
-  .hero__desc {
-    font-size: 15px;
-  }
-
-  .hero__actions {
-    flex-direction: column;
-  }
+  .hero__title { font-size: 46px; }
+  .hero__desc { font-size: 15px; }
+  .hero__actions { flex-direction: column; }
 
   /* Trust strip */
   .trust-strip {
@@ -52,49 +40,25 @@
   }
 
   .about__image { height: 260px; }
-
   .about__title { font-size: 36px; }
 
   /* How it works */
-  .how-it-works {
-    padding: 48px 24px;
-  }
-
+  .how-it-works { padding: 48px 24px; }
   .how-it-works__title { font-size: 36px; }
-
-  .how-it-works__grid {
-    grid-template-columns: 1fr;
-  }
+  .how-it-works__grid { grid-template-columns: 1fr; }
 
   /* Pricing */
-  .pricing {
-    padding: 48px 24px;
-  }
-
+  .pricing { padding: 48px 24px; }
   .pricing__title { font-size: 36px; }
-
-  .pricing__grid {
-    grid-template-columns: 1fr;
-  }
+  .pricing__grid { grid-template-columns: 1fr; }
 
   /* Testimonial */
-  .testimonial {
-    padding: 48px 24px;
-  }
-
-  .testimonial__text {
-    font-size: 26px;
-  }
+  .testimonial { padding: 48px 24px; }
+  .testimonial__text { font-size: 26px; }
 
   /* CTA */
-  .cta-banner {
-    margin: 0 16px 16px;
-  }
-
-  .cta-banner__content {
-    padding: 48px 24px;
-  }
-
+  .cta-banner { margin: 0 16px 16px; }
+  .cta-banner__content { padding: 48px 24px; }
   .cta-banner__title { font-size: 34px; }
 
   /* Footer */
@@ -105,31 +69,27 @@
     gap: 20px;
   }
 
-  .footer__brand {
-    flex-direction: column;
-  }
+  .footer__brand { flex-direction: column; }
 
-  /* Sidebar → hidden */
-  .sidebar {
-    display: none;
-  }
+  /* Sidebar hidden on mobile */
+  .sidebar { display: none; }
 
   .app-main {
     margin-left: 0;
     padding: 24px 20px 100px;
   }
 
-  /* Mobile tabs → visible */
+  /* Mobile tabs visible (LIGHT) */
   .mobile-tabs {
     display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(28, 40, 32, 0.95);
+    background: rgba(251, 247, 239, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border-subtle);
+    border-top: 1px solid rgba(42, 37, 33, 0.07);
     padding: 12px 20px 24px;
     justify-content: space-around;
     z-index: 50;
@@ -140,7 +100,7 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    color: var(--text-dim);
+    color: var(--text-dark-muted);
     cursor: pointer;
     font-size: 10px;
     font-weight: 600;
@@ -163,27 +123,13 @@
   }
 
   .dash__greeting { font-size: 28px; }
-
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .continue__grid {
-    grid-template-columns: 1fr;
-  }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .continue__grid { grid-template-columns: 1fr; }
 
   /* Agendar mobile */
-  .agendar__layout {
-    flex-direction: column;
-  }
-
-  .agendar__days {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .agendar__slots {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .agendar__layout { flex-direction: column; }
+  .agendar__days { grid-template-columns: repeat(3, 1fr); }
+  .agendar__slots { grid-template-columns: repeat(2, 1fr); }
 
   /* Mis clases mobile */
   .mis-clases__header {
@@ -191,9 +137,7 @@
     gap: 16px;
   }
 
-  .clase-card {
-    flex-wrap: wrap;
-  }
+  .clase-card { flex-wrap: wrap; }
 
   /* Recursos mobile */
   .recursos__header {
@@ -202,28 +146,15 @@
   }
 
   .recursos__search { width: 100%; }
-
-  .recursos__grid {
-    grid-template-columns: 1fr;
-  }
+  .recursos__grid { grid-template-columns: 1fr; }
 
   /* Recurso preview mobile */
-  .recurso-preview__layout {
-    grid-template-columns: 1fr;
-  }
+  .recurso-preview__layout { grid-template-columns: 1fr; }
 
   /* Progreso mobile */
-  .progreso__stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .achievements {
-    flex-direction: column;
-  }
+  .progreso__stats { grid-template-columns: 1fr 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .achievements { flex-direction: column; }
 
   /* Live class mobile */
   .live-layout {

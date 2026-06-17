@@ -1,4 +1,4 @@
-/* ─── Hero ─── */
+/* ─── Hero (DARK — C style) ─── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -36,7 +36,7 @@
   font-size: 88px;
   line-height: 0.98;
   letter-spacing: -0.02em;
-  color: var(--text-primary);
+  color: var(--text-light);
 }
 
 .hero__title em {
@@ -47,7 +47,7 @@
 .hero__desc {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--text-light-secondary);
   max-width: 500px;
   margin-top: 28px;
 }
@@ -58,15 +58,14 @@
   margin-top: 38px;
 }
 
-/* ─── Trust strip ─── */
+/* ─── Trust strip (LIGHT) ─── */
 .trust-strip {
   display: flex;
   justify-content: center;
   gap: 64px;
   padding: 80px 56px;
   flex-wrap: wrap;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-light);
 }
 
 .trust-strip__item {
@@ -77,22 +76,22 @@
   font-family: var(--font-serif);
   font-size: 42px;
   font-weight: 600;
-  color: var(--ocre-light);
+  color: var(--bosque);
 }
 
 .trust-strip__label {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
   margin-top: 4px;
 }
 
 .trust-strip__divider {
   width: 1px;
-  background: var(--border-card);
+  background: rgba(42, 37, 33, 0.12);
   align-self: stretch;
 }
 
-/* ─── About the teacher ─── */
+/* ─── About the teacher (LIGHT soft) ─── */
 .about {
   padding: 88px 56px;
   display: grid;
@@ -101,6 +100,7 @@
   align-items: center;
   max-width: 1320px;
   margin: 0 auto;
+  background: var(--bg-light-soft);
 }
 
 .about__image {
@@ -134,12 +134,12 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 18px;
-  color: var(--text-primary);
+  color: var(--text-light);
   opacity: 0.85;
 }
 
 .about__label {
-  color: var(--ocre-light);
+  color: var(--arcilla);
   margin-bottom: 18px;
 }
 
@@ -148,13 +148,13 @@
   font-size: 50px;
   font-weight: 500;
   line-height: 1.05;
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 .about__text {
   font-size: 16.5px;
   line-height: 1.75;
-  color: var(--text-secondary);
+  color: var(--text-dark-secondary);
   max-width: 560px;
   margin-top: 24px;
 }
@@ -167,20 +167,21 @@
 }
 
 .about__tag {
-  background: var(--bg-card);
+  background: var(--bg-light);
   border: 1px solid var(--border-card);
   padding: 9px 16px;
   border-radius: var(--radius-pill);
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--bosque);
 }
 
-/* ─── How it works ─── */
+/* ─── How it works (LIGHT) ─── */
 .how-it-works {
   padding: 88px 56px;
   max-width: 1320px;
   margin: 0 auto;
+  background: var(--bg-light);
 }
 
 .how-it-works__header {
@@ -189,7 +190,7 @@
 }
 
 .how-it-works__label {
-  color: var(--ocre-light);
+  color: var(--arcilla);
   margin-bottom: 14px;
 }
 
@@ -197,7 +198,7 @@
   font-family: var(--font-serif);
   font-size: 50px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 .how-it-works__grid {
@@ -208,22 +209,22 @@
 
 .step-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
-  transition: transform var(--transition-fast), background var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 20px -10px rgba(42, 37, 33, 0.12);
 }
 
 .step-card:hover {
   transform: translateY(-4px);
-  background: var(--bg-card-hover);
+  box-shadow: 0 12px 30px -12px rgba(42, 37, 33, 0.18);
 }
 
 .step-card__icon {
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: rgba(244, 236, 224, 0.04);
+  background: var(--bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,20 +236,20 @@
   font-size: 28px;
   font-weight: 600;
   margin: 6px 0 10px;
+  color: var(--text-dark);
 }
 
 .step-card__text {
   font-size: 15px;
   line-height: 1.65;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
 }
 
-/* ─── Pricing / Modalities ─── */
+/* ─── Pricing / Modalities (DARK) ─── */
 .pricing {
   padding: 88px 56px;
-  background: rgba(244, 236, 224, 0.03);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bosque);
+  color: var(--text-light);
 }
 
 .pricing__inner {
@@ -278,7 +279,7 @@
 
 .pricing__subtitle {
   font-size: 15px;
-  color: var(--text-muted);
+  color: var(--text-light-secondary);
   max-width: 380px;
   line-height: 1.6;
 }
@@ -290,8 +291,8 @@
 }
 
 .price-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background: var(--bg-card-dark);
+  border: 1px solid var(--border-dark-card);
   border-radius: var(--radius-lg);
   padding: 34px;
   position: relative;
@@ -335,12 +336,12 @@
 .price-card__desc {
   font-size: 14.5px;
   line-height: 1.65;
-  color: var(--text-muted);
+  color: var(--text-light-secondary);
   margin: 12px 0 22px;
 }
 
 .price-card--featured .price-card__desc {
-  color: var(--text-dim);
+  color: var(--text-dark-muted);
 }
 
 .price-card__price {
@@ -352,19 +353,20 @@
 .price-card__period {
   font-family: var(--font-sans);
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-light-muted);
 }
 
 .price-card--featured .price-card__period {
-  color: var(--text-dim);
+  color: var(--text-dark-muted);
 }
 
-/* ─── Testimonial ─── */
+/* ─── Testimonial (LIGHT) ─── */
 .testimonial {
   padding: 90px 56px;
   text-align: center;
   max-width: 1000px;
   margin: 0 auto;
+  background: var(--bg-light);
 }
 
 .testimonial__quote-icon {
@@ -377,7 +379,7 @@
   font-size: 38px;
   line-height: 1.35;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-dark);
   max-width: 880px;
   margin: 0 auto;
 }
@@ -386,10 +388,19 @@
   margin-top: 28px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-dark-muted);
 }
 
-/* ─── CTA Banner ─── */
+/* Landing light section wrapper */
+.landing-light {
+  background: var(--bg-light);
+}
+
+.landing-light-soft {
+  background: var(--bg-light-soft);
+}
+
+/* ─── CTA Banner (ARCILLA) ─── */
 .cta-banner {
   position: relative;
   margin: 0 32px 32px;
@@ -433,17 +444,16 @@
   padding: 17px 38px;
 }
 
-/* ─── Footer ─── */
+/* ─── Footer (DARK) ─── */
 .footer {
-  background: var(--bg-gradient-bottom);
-  color: var(--text-secondary);
+  background: var(--bg-deep);
+  color: var(--text-light-secondary);
   padding: 54px 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  border-top: 1px solid var(--border-subtle);
 }
 
 .footer__brand {
@@ -456,12 +466,12 @@
   font-family: var(--font-serif);
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-light);
 }
 
 .footer__brand-tagline {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-light-muted);
 }
 
 .footer__links {
@@ -471,5 +481,5 @@
 }
 
 .footer__links a:hover {
-  color: var(--text-primary);
+  color: var(--text-light);
 }

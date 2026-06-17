@@ -15,21 +15,34 @@
   --ocre-glow: #F2C078;
   --tinta: #2A2521;
 
-  /* Immersive backgrounds */
+  /* Dark backgrounds (hero, pricing, footer, live) */
   --bg-deep: #1E2A24;
   --bg-gradient-top: #26352D;
   --bg-gradient-bottom: #18221D;
-  --bg-sidebar: #1C2820;
-  --bg-card: rgba(244, 236, 224, 0.06);
-  --bg-card-hover: rgba(244, 236, 224, 0.10);
-  --border-subtle: rgba(244, 236, 224, 0.08);
-  --border-card: rgba(244, 236, 224, 0.12);
+  --bg-sidebar-dark: #1C2820;
+  --bg-card-dark: rgba(244, 236, 224, 0.06);
+  --bg-card-dark-hover: rgba(244, 236, 224, 0.10);
+  --border-dark: rgba(244, 236, 224, 0.08);
+  --border-dark-card: rgba(244, 236, 224, 0.12);
+
+  /* Light backgrounds (app screens, landing sections claras) */
+  --bg-light: #F4ECE0;
+  --bg-light-soft: #FBF7EF;
+  --bg-card: #FBF7EF;
+  --bg-card-hover: #F4ECE0;
+  --border-subtle: rgba(42, 37, 33, 0.07);
+  --border-card: rgba(42, 37, 33, 0.10);
 
   /* Text on dark */
-  --text-primary: #F4ECE0;
-  --text-secondary: #C9D2C5;
-  --text-muted: #9FB39A;
-  --text-dim: #7E8C82;
+  --text-light: #F4ECE0;
+  --text-light-secondary: #C9D2C5;
+  --text-light-muted: #9FB39A;
+  --text-light-dim: #7E8C82;
+
+  /* Text on light */
+  --text-dark: #2A2521;
+  --text-dark-secondary: #5A5048;
+  --text-dark-muted: #6E6358;
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', serif;

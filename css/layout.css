@@ -1,4 +1,4 @@
-/* ─── Top navigation (landing) ─── */
+/* ─── Top navigation (landing — dark glass) ─── */
 .top-nav {
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
   background: rgba(30, 42, 36, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .top-nav__brand {
@@ -27,7 +27,7 @@
   font-family: var(--font-serif);
   font-size: 24px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-light);
 }
 
 .top-nav__links {
@@ -36,11 +36,15 @@
   gap: 34px;
   font-size: 14.5px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-light-secondary);
+}
+
+.top-nav__links a {
+  transition: color var(--transition-fast);
 }
 
 .top-nav__links a:hover {
-  color: var(--text-primary);
+  color: var(--text-light);
 }
 
 .top-nav__cta {
@@ -73,7 +77,7 @@
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
-  color: var(--text-dim);
+  color: var(--text-light-dim);
 }
 
 .lang-toggle__btn.active {
@@ -81,7 +85,21 @@
   color: var(--papel);
 }
 
-/* ─── Sidebar (app screens) ─── */
+/* Light variant for sidebar / app */
+.lang-toggle--light {
+  background: rgba(42, 37, 33, 0.07);
+}
+
+.lang-toggle--light .lang-toggle__btn {
+  color: var(--text-dark-muted);
+}
+
+.lang-toggle--light .lang-toggle__btn.active {
+  background: var(--bosque);
+  color: var(--papel);
+}
+
+/* ─── Sidebar (app — LIGHT mode) ─── */
 .app-layout {
   display: flex;
   min-height: 100vh;
@@ -90,7 +108,7 @@
 .sidebar {
   width: var(--sidebar-width);
   flex: none;
-  background: var(--bg-sidebar);
+  background: var(--bg-light-soft);
   padding: 26px 18px;
   display: flex;
   flex-direction: column;
@@ -109,12 +127,14 @@
   align-items: center;
   gap: 10px;
   padding: 6px 10px 22px;
+  cursor: pointer;
 }
 
 .sidebar__brand-text {
   font-family: var(--font-serif);
   font-size: 21px;
   font-weight: 600;
+  color: var(--text-dark);
 }
 
 .sidebar__item {
@@ -125,14 +145,14 @@
   border-radius: var(--radius-sm);
   font-size: 14.5px;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text-dark-secondary);
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .sidebar__item:hover {
-  background: rgba(244, 236, 224, 0.05);
-  color: var(--text-secondary);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 .sidebar__item.active {
@@ -154,7 +174,7 @@
   gap: 11px;
   padding: 12px;
   border-radius: 14px;
-  background: var(--bg-card);
+  background: var(--bg-light);
 }
 
 .sidebar__avatar {
@@ -168,14 +188,14 @@
 .sidebar__user-name {
   font-size: 13.5px;
   font-weight: 700;
+  color: var(--text-dark);
 }
 
 .sidebar__user-level {
   font-size: 11.5px;
-  color: var(--text-dim);
+  color: var(--text-dark-muted);
 }
 
-/* Sidebar language toggle */
 .sidebar__lang {
   margin-top: 16px;
   padding-top: 16px;
@@ -190,7 +210,7 @@
   min-height: 100vh;
 }
 
-/* ─── Mobile bottom tab bar ─── */
+/* ─── Mobile bottom tab bar (LIGHT) ─── */
 .mobile-tabs {
   display: none;
 }

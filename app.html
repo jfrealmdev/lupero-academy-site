@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lupero Music Academy · App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/live.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="light-app">
+
+<!-- Lupero logo SVG (dark strokes for light bg) -->
+<!-- reusable inline -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 1: DASHBOARD
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-dashboard" class="screen active">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar__brand">
+        <svg width="28" height="28" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="31" r="16.5" stroke="#2C3E34" stroke-width="2"/><line x1="28" y1="16" x2="28" y2="46" stroke="#2C3E34" stroke-width="1.4" opacity=".55"/><path d="M28 16 C28 9 28 5 28 3" stroke="#5E7A66" stroke-width="2" stroke-linecap="round"/><path d="M28 9 C32 7 36 8 38 6 C37 11 32 12 28 11Z" fill="#C1683F"/></svg>
+        <span class="sidebar__brand-text">Lupero</span>
+      </a>
+      <div class="sidebar__item active" data-screen="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg>
+        <span data-i18n="sidebar.inicio">Inicio</span>
+      </div>
+      <div class="sidebar__item" data-screen="agendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>
+        <span data-i18n="sidebar.agendar">Agendar</span>
+      </div>
+      <div class="sidebar__item" data-screen="mis-clases">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+        <span data-i18n="sidebar.misClases">Mis clases</span>
+      </div>
+      <div class="sidebar__item" data-screen="recursos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg>
+        <span data-i18n="sidebar.recursos">Recursos</span>
+      </div>
+      <div class="sidebar__item" data-screen="progreso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+        <span data-i18n="sidebar.progreso">Progreso</span>
+      </div>
+      <div class="sidebar__lang">
+        <div class="lang-toggle lang-toggle--light">
+          <span class="lang-toggle__btn active" data-lang="es">ES</span>
+          <span class="lang-toggle__btn" data-lang="en">EN</span>
+        </div>
+      </div>
+      <div class="sidebar__user">
+        <div class="sidebar__avatar"></div>
+        <div>
+          <div class="sidebar__user-name">Camila R.</div>
+          <div class="sidebar__user-level">Nivel · Intermedio</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <div class="dash__header">
+        <div>
+          <div class="dash__greeting" data-i18n="dash.greeting">Hola, Camila</div>
+          <div class="dash__streak-msg" data-i18n-html="dash.streak">Llevas <b>12 días</b> seguidos practicando. Sigue así.</div>
+        </div>
+        <div class="dash__streak-badge">
+          <span class="dash__streak-dot"></span>
+          <span data-i18n="dash.streakBadge">Racha de 12 días</span>
+        </div>
+      </div>
+
+      <div class="next-class">
+        <svg class="next-class__bg" viewBox="0 0 700 200" preserveAspectRatio="xMidYMid slice"><circle cx="600" cy="40" r="70" fill="#E0A95E" opacity=".5"/></svg>
+        <div class="next-class__info">
+          <div class="next-class__label" data-i18n="dash.nextLabel">Próxima clase · en vivo</div>
+          <div class="next-class__title" data-i18n="dash.nextTitle">Fingerstyle — patrones de viaje</div>
+          <div class="next-class__meta" data-i18n="dash.nextMeta">Hoy · 6:00 pm · 45 min</div>
+        </div>
+        <div class="next-class__cta">
+          <button class="btn-primary" data-nav="live" data-i18n="dash.nextCta">Entrar a la clase</button>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card__label" data-i18n="dash.hours">HORAS PRACTICADAS</div>
+          <div class="stat-card__value">38.5</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label" data-i18n="dash.songs">CANCIONES</div>
+          <div class="stat-card__value">7</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label" data-i18n="dash.level">PROGRESO DEL NIVEL</div>
+          <div class="stat-card__bar-wrap">
+            <div class="stat-card__bar"><div class="stat-card__bar-fill" style="width:64%"></div></div>
+            <span class="stat-card__bar-label">64%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="continue__header">
+        <div class="continue__title" data-i18n="dash.continueTitle">Continúa donde quedaste</div>
+        <span class="continue__link" data-nav="recursos" data-i18n="dash.continueLink">Ver todo →</span>
+      </div>
+      <div class="continue__grid">
+        <div class="lesson-card" data-nav="recursos"><div class="lesson-card__thumb" style="background:linear-gradient(135deg,#7C9885,#5E7A66)"><svg width="34" height="34" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div><div class="lesson-card__body"><div class="lesson-card__name" data-i18n="dash.lesson1">Ritmo y rasgueo</div><div class="lesson-card__progress" data-i18n="dash.lesson1.progress">Lección 4 de 8</div></div></div>
+        <div class="lesson-card" data-nav="recursos"><div class="lesson-card__thumb" style="background:linear-gradient(135deg,#C1683F,#D89B53)"><svg width="34" height="34" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div><div class="lesson-card__body"><div class="lesson-card__name" data-i18n="dash.lesson2">Acordes con cejilla</div><div class="lesson-card__progress" data-i18n="dash.lesson2.progress">Lección 2 de 6</div></div></div>
+        <div class="lesson-card" data-nav="recursos"><div class="lesson-card__thumb" style="background:linear-gradient(135deg,#2C3E34,#42594B)"><svg width="34" height="34" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div><div class="lesson-card__body"><div class="lesson-card__name" data-i18n="dash.lesson3">Escala pentatónica</div><div class="lesson-card__progress" data-i18n="dash.lesson3.progress">Lección 1 de 5</div></div></div>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-tabs">
+    <div class="mobile-tab active" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="mobile.inicio">Inicio</span></div>
+    <div class="mobile-tab" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="mobile.agendar">Agendar</span></div>
+    <div class="mobile-tab" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="mobile.recursos">Recursos</span></div>
+    <div class="mobile-tab" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-i18n="mobile.perfil">Perfil</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 2: AGENDAR
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-agendar" class="screen">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar__brand"><svg width="28" height="28" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="31" r="16.5" stroke="#2C3E34" stroke-width="2"/><line x1="28" y1="16" x2="28" y2="46" stroke="#2C3E34" stroke-width="1.4" opacity=".55"/><path d="M28 16 C28 9 28 5 28 3" stroke="#5E7A66" stroke-width="2" stroke-linecap="round"/><path d="M28 9 C32 7 36 8 38 6 C37 11 32 12 28 11Z" fill="#C1683F"/></svg><span class="sidebar__brand-text">Lupero</span></a>
+      <div class="sidebar__item" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="sidebar.inicio">Inicio</span></div>
+      <div class="sidebar__item active" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="sidebar.agendar">Agendar</span></div>
+      <div class="sidebar__item" data-screen="mis-clases"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span data-i18n="sidebar.misClases">Mis clases</span></div>
+      <div class="sidebar__item" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="sidebar.recursos">Recursos</span></div>
+      <div class="sidebar__item" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span data-i18n="sidebar.progreso">Progreso</span></div>
+      <div class="sidebar__lang"><div class="lang-toggle lang-toggle--light"><span class="lang-toggle__btn active" data-lang="es">ES</span><span class="lang-toggle__btn" data-lang="en">EN</span></div></div>
+      <div class="sidebar__user"><div class="sidebar__avatar"></div><div><div class="sidebar__user-name">Camila R.</div><div class="sidebar__user-level">Nivel · Intermedio</div></div></div>
+    </aside>
+    <main class="app-main">
+      <div class="agendar__layout">
+        <div class="agendar__calendar">
+          <div class="agendar__title" data-i18n="agendar.title">Reserva tu clase</div>
+          <div class="agendar__subtitle" data-i18n="agendar.subtitle">Clase particular · 45 minutos · por videollamada</div>
+          <div class="label-upper agendar__week-label" data-i18n="agendar.weekLabel">Junio 2026 · Semana</div>
+          <div class="agendar__days">
+            <div class="day-chip"><div class="day-chip__label" data-i18n="day.lun">Lun</div><div class="day-chip__num">12</div></div>
+            <div class="day-chip"><div class="day-chip__label" data-i18n="day.mar">Mar</div><div class="day-chip__num">13</div></div>
+            <div class="day-chip selected"><div class="day-chip__label" data-i18n="day.mie">Mié</div><div class="day-chip__num">14</div></div>
+            <div class="day-chip"><div class="day-chip__label" data-i18n="day.jue">Jue</div><div class="day-chip__num">15</div></div>
+            <div class="day-chip"><div class="day-chip__label" data-i18n="day.vie">Vie</div><div class="day-chip__num">16</div></div>
+            <div class="day-chip"><div class="day-chip__label" data-i18n="day.sab">Sáb</div><div class="day-chip__num">17</div></div>
+          </div>
+          <div class="label-upper agendar__slots-label" data-i18n="agendar.slotsLabel">Horarios disponibles</div>
+          <div class="agendar__slots">
+            <div class="slot-chip" data-slot="s1">08:00</div>
+            <div class="slot-chip disabled" data-slot="s2">09:30</div>
+            <div class="slot-chip selected" data-slot="s3">11:00</div>
+            <div class="slot-chip" data-slot="s4">14:00</div>
+            <div class="slot-chip" data-slot="s5">16:30</div>
+            <div class="slot-chip disabled" data-slot="s6">18:00</div>
+          </div>
+          <div class="agendar__legend">
+            <span class="agendar__legend-item"><span class="agendar__legend-dot" style="background:var(--bg-card);border:1.5px solid var(--border-card)"></span><span data-i18n="agendar.available">Disponible</span></span>
+            <span class="agendar__legend-item"><span class="agendar__legend-dot" style="background:rgba(42,37,33,.04);opacity:.5"></span><span data-i18n="agendar.occupied">Ocupado</span></span>
+            <span class="agendar__legend-item"><span class="agendar__legend-dot" style="background:var(--arcilla)"></span><span data-i18n="agendar.selected">Seleccionado</span></span>
+          </div>
+        </div>
+        <div class="agendar__summary">
+          <div class="summary-panel">
+            <div class="summary-panel__title" data-i18n="agendar.summaryTitle">Resumen</div>
+            <div class="summary-panel__rows">
+              <div class="summary-panel__row"><span class="summary-panel__row-label" data-i18n="agendar.classType">Clase</span><span class="summary-panel__row-value" data-i18n="agendar.classValue">Particular · 45 min</span></div>
+              <div class="summary-panel__row"><span class="summary-panel__row-label" data-i18n="agendar.dateTime">Fecha y hora</span><span class="summary-panel__row-value summary-panel__row-value--accent" id="agendar-sel-label">Mié 14 · 11:00</span></div>
+              <div class="summary-panel__row"><span class="summary-panel__row-label" data-i18n="agendar.modality">Modalidad</span><span class="summary-panel__row-value" data-i18n="agendar.modalityValue">Videollamada</span></div>
+            </div>
+            <div class="summary-panel__divider"><span class="summary-panel__total-label" data-i18n="agendar.total">Total</span><span class="summary-panel__total-price">$25</span></div>
+            <div class="summary-panel__actions">
+              <div class="summary-panel__payment">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A5048" stroke-width="1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+                <span class="summary-panel__payment-number">&bull;&bull;&bull;&bull; 4912</span>
+                <span class="summary-panel__payment-edit">Editar</span>
+              </div>
+              <button class="btn-primary" style="width:100%;padding:16px" data-i18n="agendar.confirm">Confirmar y pagar</button>
+              <div class="summary-panel__note" data-i18n="agendar.cancelNote">Cancelación gratuita hasta 12 h antes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-tabs">
+    <div class="mobile-tab" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="mobile.inicio">Inicio</span></div>
+    <div class="mobile-tab active" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="mobile.agendar">Agendar</span></div>
+    <div class="mobile-tab" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="mobile.recursos">Recursos</span></div>
+    <div class="mobile-tab" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-i18n="mobile.perfil">Perfil</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 3: MIS CLASES
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-mis-clases" class="screen">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar__brand"><svg width="28" height="28" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="31" r="16.5" stroke="#2C3E34" stroke-width="2"/><line x1="28" y1="16" x2="28" y2="46" stroke="#2C3E34" stroke-width="1.4" opacity=".55"/><path d="M28 16 C28 9 28 5 28 3" stroke="#5E7A66" stroke-width="2" stroke-linecap="round"/><path d="M28 9 C32 7 36 8 38 6 C37 11 32 12 28 11Z" fill="#C1683F"/></svg><span class="sidebar__brand-text">Lupero</span></a>
+      <div class="sidebar__item" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="sidebar.inicio">Inicio</span></div>
+      <div class="sidebar__item" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="sidebar.agendar">Agendar</span></div>
+      <div class="sidebar__item active" data-screen="mis-clases"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span data-i18n="sidebar.misClases">Mis clases</span></div>
+      <div class="sidebar__item" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="sidebar.recursos">Recursos</span></div>
+      <div class="sidebar__item" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span data-i18n="sidebar.progreso">Progreso</span></div>
+      <div class="sidebar__lang"><div class="lang-toggle lang-toggle--light"><span class="lang-toggle__btn active" data-lang="es">ES</span><span class="lang-toggle__btn" data-lang="en">EN</span></div></div>
+      <div class="sidebar__user"><div class="sidebar__avatar"></div><div><div class="sidebar__user-name">Camila R.</div><div class="sidebar__user-level">Nivel · Intermedio</div></div></div>
+    </aside>
+    <main class="app-main">
+      <div class="mis-clases__header">
+        <h1 class="mis-clases__title" data-i18n="misClases.title">Mis clases</h1>
+        <div class="tab-pills">
+          <span class="tab-pill active" data-tab="upcoming" data-i18n="misClases.upcoming">Próximas</span>
+          <span class="tab-pill" data-tab="history" data-i18n="misClases.history">Historial</span>
+        </div>
+      </div>
+      <div class="tab-content active" data-tab="upcoming">
+        <div class="clase-card">
+          <div class="clase-card__date-box"><div class="clase-card__date-day">16</div><div class="clase-card__date-month">Jun</div></div>
+          <div class="clase-card__info"><div class="clase-card__title">Fingerstyle — patrones de viaje</div><div class="clase-card__meta">6:00 pm · 45 min · Videollamada</div></div>
+          <span class="clase-card__badge clase-card__badge--upcoming" data-i18n="misClases.upcoming.badge">Próxima</span>
+          <button class="btn-primary clase-card__action" data-nav="live" data-i18n="misClases.enter" style="padding:10px 20px;font-size:13px">Entrar</button>
+        </div>
+        <div class="clase-card">
+          <div class="clase-card__date-box"><div class="clase-card__date-day">19</div><div class="clase-card__date-month">Jun</div></div>
+          <div class="clase-card__info"><div class="clase-card__title">Blues shuffle en E</div><div class="clase-card__meta">4:00 pm · 45 min · Videollamada</div></div>
+          <span class="clase-card__badge clase-card__badge--upcoming" data-i18n="misClases.upcoming.badge">Próxima</span>
+          <button class="btn-outline btn-outline--light clase-card__action" data-i18n="misClases.cancel" style="padding:10px 20px;font-size:13px;border-width:1px">Cancelar</button>
+        </div>
+        <div class="clase-card">
+          <div class="clase-card__date-box"><div class="clase-card__date-day">23</div><div class="clase-card__date-month">Jun</div></div>
+          <div class="clase-card__info"><div class="clase-card__title">Acordes con cejilla — práctica</div><div class="clase-card__meta">6:00 pm · 45 min · Videollamada</div></div>
+          <span class="clase-card__badge clase-card__badge--upcoming" data-i18n="misClases.upcoming.badge">Próxima</span>
+          <button class="btn-outline btn-outline--light clase-card__action" data-i18n="misClases.cancel" style="padding:10px 20px;font-size:13px;border-width:1px">Cancelar</button>
+        </div>
+      </div>
+      <div class="tab-content" data-tab="history">
+        <div class="clase-card"><div class="clase-card__date-box"><div class="clase-card__date-day">12</div><div class="clase-card__date-month">Jun</div></div><div class="clase-card__info"><div class="clase-card__title">Ritmo y rasgueo — nivel 2</div><div class="clase-card__meta">6:00 pm · 45 min</div></div><span class="clase-card__badge clase-card__badge--completed" data-i18n="misClases.completed">Completada</span><button class="btn-outline btn-outline--light clase-card__action" data-nav="recursos" data-i18n="misClases.viewNotes" style="padding:10px 20px;font-size:13px;border-width:1px">Ver notas</button></div>
+        <div class="clase-card"><div class="clase-card__date-box"><div class="clase-card__date-day">9</div><div class="clase-card__date-month">Jun</div></div><div class="clase-card__info"><div class="clase-card__title">Escala pentatónica — intro</div><div class="clase-card__meta">4:00 pm · 45 min</div></div><span class="clase-card__badge clase-card__badge--completed" data-i18n="misClases.completed">Completada</span><button class="btn-outline btn-outline--light clase-card__action" data-nav="recursos" data-i18n="misClases.viewNotes" style="padding:10px 20px;font-size:13px;border-width:1px">Ver notas</button></div>
+        <div class="clase-card"><div class="clase-card__date-box"><div class="clase-card__date-day">5</div><div class="clase-card__date-month">Jun</div></div><div class="clase-card__info"><div class="clase-card__title">Fingerstyle — patrones básicos</div><div class="clase-card__meta">6:00 pm · 45 min</div></div><span class="clase-card__badge clase-card__badge--completed" data-i18n="misClases.completed">Completada</span><button class="btn-outline btn-outline--light clase-card__action" data-nav="recursos" data-i18n="misClases.viewNotes" style="padding:10px 20px;font-size:13px;border-width:1px">Ver notas</button></div>
+        <div class="clase-card"><div class="clase-card__date-box"><div class="clase-card__date-day">2</div><div class="clase-card__date-month">Jun</div></div><div class="clase-card__info"><div class="clase-card__title">Teoría — círculo de quintas</div><div class="clase-card__meta">4:00 pm · 45 min</div></div><span class="clase-card__badge clase-card__badge--cancelled" data-i18n="misClases.cancelled">Cancelada</span></div>
+        <div class="clase-card"><div class="clase-card__date-box"><div class="clase-card__date-day">29</div><div class="clase-card__date-month">May</div></div><div class="clase-card__info"><div class="clase-card__title">Calentamiento y técnica mano derecha</div><div class="clase-card__meta">6:00 pm · 45 min</div></div><span class="clase-card__badge clase-card__badge--completed" data-i18n="misClases.completed">Completada</span><button class="btn-outline btn-outline--light clase-card__action" data-nav="recursos" data-i18n="misClases.viewNotes" style="padding:10px 20px;font-size:13px;border-width:1px">Ver notas</button></div>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-tabs"><div class="mobile-tab" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="mobile.inicio">Inicio</span></div><div class="mobile-tab" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="mobile.agendar">Agendar</span></div><div class="mobile-tab" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="mobile.recursos">Recursos</span></div><div class="mobile-tab" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-i18n="mobile.perfil">Perfil</span></div></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 4: RECURSOS
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-recursos" class="screen">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar__brand"><svg width="28" height="28" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="31" r="16.5" stroke="#2C3E34" stroke-width="2"/><line x1="28" y1="16" x2="28" y2="46" stroke="#2C3E34" stroke-width="1.4" opacity=".55"/><path d="M28 16 C28 9 28 5 28 3" stroke="#5E7A66" stroke-width="2" stroke-linecap="round"/><path d="M28 9 C32 7 36 8 38 6 C37 11 32 12 28 11Z" fill="#C1683F"/></svg><span class="sidebar__brand-text">Lupero</span></a>
+      <div class="sidebar__item" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="sidebar.inicio">Inicio</span></div>
+      <div class="sidebar__item" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="sidebar.agendar">Agendar</span></div>
+      <div class="sidebar__item" data-screen="mis-clases"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span data-i18n="sidebar.misClases">Mis clases</span></div>
+      <div class="sidebar__item active" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="sidebar.recursos">Recursos</span></div>
+      <div class="sidebar__item" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span data-i18n="sidebar.progreso">Progreso</span></div>
+      <div class="sidebar__lang"><div class="lang-toggle lang-toggle--light"><span class="lang-toggle__btn active" data-lang="es">ES</span><span class="lang-toggle__btn" data-lang="en">EN</span></div></div>
+      <div class="sidebar__user"><div class="sidebar__avatar"></div><div><div class="sidebar__user-name">Camila R.</div><div class="sidebar__user-level">Nivel · Intermedio</div></div></div>
+    </aside>
+    <main class="app-main">
+      <div class="recursos__header">
+        <h1 class="recursos__title" data-i18n="recursos.title">Recursos</h1>
+        <div class="recursos__search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6E6358" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="recursos__search-input" type="text" data-i18n-placeholder="recursos.searchPlaceholder" placeholder="Buscar partituras, tabs…"></div>
+      </div>
+      <div class="filter-pills">
+        <span class="filter-pill active" data-filter="todo" data-i18n="recursos.all">Todo</span>
+        <span class="filter-pill" data-filter="partitura" data-i18n="recursos.partituras">Partituras</span>
+        <span class="filter-pill" data-filter="tab" data-i18n="recursos.tabs">Tabs</span>
+        <span class="filter-pill" data-filter="ejercicio" data-i18n="recursos.ejercicios">Ejercicios</span>
+        <span class="filter-pill" data-filter="video" data-i18n="recursos.video">Video</span>
+        <span class="filter-pill" data-filter="teoria" data-i18n="recursos.teoria">Teoría</span>
+      </div>
+      <div class="recursos__grid">
+        <div class="recurso-card" data-category="partitura" data-recurso-id="romance"><div class="recurso-card__thumb" style="background:linear-gradient(135deg,#C1683F,#D89B53)"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FBF7EF" stroke-width="1.6"><path d="M6 3h9l3 3v15H6z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div><div class="recurso-card__body"><div class="recurso-card__type">PARTITURA · PDF</div><div class="recurso-card__name">Romance Anónimo</div><div class="recurso-card__meta">Intermedio · 3 págs</div></div></div>
+        <div class="recurso-card" data-category="tab" data-recurso-id="blues"><div class="recurso-card__thumb" style="background:linear-gradient(135deg,#7C9885,#5E7A66)"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FBF7EF" stroke-width="1.6"><path d="M4 6h16M4 10h16M4 14h16M4 18h10"/></svg></div><div class="recurso-card__body"><div class="recurso-card__type" style="color:var(--salvia-dark)">TAB</div><div class="recurso-card__name">Blues shuffle en E</div><div class="recurso-card__meta">Principiante · 12 compases</div></div></div>
+        <div class="recurso-card" data-category="video" data-recurso-id="warmup"><div class="recurso-card__thumb" style="background:linear-gradient(135deg,#2C3E34,#42594B)"><svg width="42" height="42" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div><div class="recurso-card__body"><div class="recurso-card__type" style="color:var(--text-dark-muted)">VIDEO · 14 MIN</div><div class="recurso-card__name">Calentamiento diario</div><div class="recurso-card__meta">Rutina · todos los niveles</div></div></div>
+        <div class="recurso-card" data-category="ejercicio" data-recurso-id="chords"><div class="recurso-card__thumb" style="background:linear-gradient(135deg,#D89B53,#C1683F)"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FBF7EF" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="recurso-card__body"><div class="recurso-card__type">EJERCICIO</div><div class="recurso-card__name">Cambios de acorde</div><div class="recurso-card__meta">Metrónomo · 60–90 bpm</div></div></div>
+        <div class="recurso-card" data-category="teoria" data-recurso-id="quintas"><div class="recurso-card__thumb" style="background:linear-gradient(135deg,#5E7A66,#2C3E34)"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FBF7EF" stroke-width="1.6"><path d="M6 3h9l3 3v15H6z"/><path d="M9 9h6M9 13h6"/></svg></div><div class="recurso-card__body"><div class="recurso-card__type" style="color:var(--salvia-dark)">TEORÍA · PDF</div><div class="recurso-card__name">Círculo de quintas</div><div class="recurso-card__meta">Guía visual · 2 págs</div></div></div>
+        <div class="recurso-card" data-category="video" data-recurso-id="fingerstyle-zero"><div class="recurso-card__thumb" style="background:linear-gradient(135deg,#C1683F,#7C9885)"><svg width="42" height="42" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div><div class="recurso-card__body"><div class="recurso-card__type">VIDEO · 22 MIN</div><div class="recurso-card__name">Fingerstyle desde cero</div><div class="recurso-card__meta">Curso · 8 lecciones</div></div></div>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-tabs"><div class="mobile-tab" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="mobile.inicio">Inicio</span></div><div class="mobile-tab" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="mobile.agendar">Agendar</span></div><div class="mobile-tab active" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="mobile.recursos">Recursos</span></div><div class="mobile-tab" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-i18n="mobile.perfil">Perfil</span></div></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 5: RECURSO PREVIEW
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-recurso-preview" class="screen">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar__brand"><svg width="28" height="28" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="31" r="16.5" stroke="#2C3E34" stroke-width="2"/><line x1="28" y1="16" x2="28" y2="46" stroke="#2C3E34" stroke-width="1.4" opacity=".55"/><path d="M28 16 C28 9 28 5 28 3" stroke="#5E7A66" stroke-width="2" stroke-linecap="round"/><path d="M28 9 C32 7 36 8 38 6 C37 11 32 12 28 11Z" fill="#C1683F"/></svg><span class="sidebar__brand-text">Lupero</span></a>
+      <div class="sidebar__item" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="sidebar.inicio">Inicio</span></div>
+      <div class="sidebar__item" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="sidebar.agendar">Agendar</span></div>
+      <div class="sidebar__item" data-screen="mis-clases"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span data-i18n="sidebar.misClases">Mis clases</span></div>
+      <div class="sidebar__item active" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="sidebar.recursos">Recursos</span></div>
+      <div class="sidebar__item" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span data-i18n="sidebar.progreso">Progreso</span></div>
+      <div class="sidebar__lang"><div class="lang-toggle lang-toggle--light"><span class="lang-toggle__btn active" data-lang="es">ES</span><span class="lang-toggle__btn" data-lang="en">EN</span></div></div>
+      <div class="sidebar__user"><div class="sidebar__avatar"></div><div><div class="sidebar__user-name">Camila R.</div><div class="sidebar__user-level">Nivel · Intermedio</div></div></div>
+    </aside>
+    <main class="app-main">
+      <div class="recurso-preview__back" data-nav="recursos" data-i18n="recursoPreview.back">&larr; Recursos</div>
+      <!-- Romance Anónimo (default visible) -->
+      <div class="recurso-preview__content-block active" data-recurso="romance">
+        <div class="recurso-preview__layout">
+          <div class="recurso-preview__main"><div class="recurso-preview__header"><div class="recurso-preview__type">PARTITURA · PDF</div><h2 class="recurso-preview__title">Romance Anónimo</h2><div class="recurso-preview__meta-row"><span>Intermedio</span><span>3 páginas</span><span>Fingerstyle</span></div></div><div class="recurso-preview__content"><div class="recurso-preview__tab-content"><div style="font-size:12px;font-weight:800;color:var(--arcilla);letter-spacing:.1em;margin-bottom:12px">TAB · INTRO</div><pre>e|---0---0---0---0---0---0---|
+B|-----1-------1-------1----|
+G|---0---0---0---0---0---0---|
+D|---------------------------|
+A|---3-----------------------|
+E|---------------------------|</pre></div></div><div class="recurso-preview__action"><button class="btn-primary" data-i18n="recursoPreview.download">Descargar PDF</button></div></div>
+          <div><div class="recurso-preview__sidebar-section"><div class="recurso-preview__sidebar-title" data-i18n="recursoPreview.related">Recursos relacionados</div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Fingerstyle desde cero</div><div class="recurso-preview__related-meta">Video · 22 min</div></div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Calentamiento diario</div><div class="recurso-preview__related-meta">Video · 14 min</div></div></div></div>
+        </div>
+      </div>
+      <!-- Video preview -->
+      <div class="recurso-preview__content-block" data-recurso="warmup">
+        <div class="recurso-preview__layout">
+          <div class="recurso-preview__main"><div class="recurso-preview__header"><div class="recurso-preview__type" style="color:var(--text-dark-muted)">VIDEO · 14 MIN</div><h2 class="recurso-preview__title">Calentamiento diario</h2><div class="recurso-preview__meta-row"><span>Todos los niveles</span><span>Rutina</span></div></div><div class="recurso-preview__content"><div class="recurso-preview__video-placeholder" style="background:linear-gradient(135deg,#2C3E34,#42594B)"><div class="recurso-preview__play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div><div class="recurso-preview__sidebar-section"><div class="recurso-preview__sidebar-title" data-i18n="recursoPreview.related">Recursos relacionados</div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Cambios de acorde</div><div class="recurso-preview__related-meta">Ejercicio</div></div></div></div>
+        </div>
+      </div>
+      <!-- Exercise preview -->
+      <div class="recurso-preview__content-block" data-recurso="chords">
+        <div class="recurso-preview__layout">
+          <div class="recurso-preview__main"><div class="recurso-preview__header"><div class="recurso-preview__type">EJERCICIO</div><h2 class="recurso-preview__title">Cambios de acorde</h2><div class="recurso-preview__meta-row"><span>Metrónomo</span><span>60–90 bpm</span></div></div><div class="recurso-preview__content"><div style="text-align:center;padding:40px 0"><div style="font-family:var(--font-serif);font-size:72px;font-weight:600;color:var(--arcilla);animation:lpPulse 1s ease infinite">72</div><div style="font-size:14px;color:var(--text-dark-muted);margin-top:8px">BPM</div><div style="margin-top:24px;display:flex;gap:12px;justify-content:center"><button class="btn-outline btn-outline--light" style="padding:10px 20px;font-size:13px">-</button><button class="btn-primary" data-i18n="recursoPreview.start" style="padding:10px 24px;font-size:13px">Iniciar ejercicio</button><button class="btn-outline btn-outline--light" style="padding:10px 20px;font-size:13px">+</button></div></div></div></div>
+          <div><div class="recurso-preview__sidebar-section"><div class="recurso-preview__sidebar-title" data-i18n="recursoPreview.related">Recursos relacionados</div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Blues shuffle en E</div><div class="recurso-preview__related-meta">Tab</div></div></div></div>
+        </div>
+      </div>
+      <!-- Other previews (blues, quintas, fingerstyle-zero) -->
+      <div class="recurso-preview__content-block" data-recurso="blues">
+        <div class="recurso-preview__layout">
+          <div class="recurso-preview__main"><div class="recurso-preview__header"><div class="recurso-preview__type" style="color:var(--salvia-dark)">TAB</div><h2 class="recurso-preview__title">Blues shuffle en E</h2><div class="recurso-preview__meta-row"><span>Principiante</span><span>12 compases</span></div></div><div class="recurso-preview__content"><div class="recurso-preview__tab-content"><div style="font-size:12px;font-weight:800;color:var(--salvia-dark);letter-spacing:.1em;margin-bottom:12px">SHUFFLE · 12-BAR BLUES</div><pre>e|---------------------------|
+B|---------------------------|
+G|---------------------------|
+D|---2---2-4---2---2-4-------|
+A|---2---2-4---2---2-4-------|
+E|---0---0-0---0---0-0-------|</pre></div></div><div class="recurso-preview__action"><button class="btn-primary" data-i18n="recursoPreview.download">Descargar PDF</button></div></div>
+          <div><div class="recurso-preview__sidebar-section"><div class="recurso-preview__sidebar-title" data-i18n="recursoPreview.related">Recursos relacionados</div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Cambios de acorde</div><div class="recurso-preview__related-meta">Ejercicio</div></div></div></div>
+        </div>
+      </div>
+      <div class="recurso-preview__content-block" data-recurso="quintas">
+        <div class="recurso-preview__layout">
+          <div class="recurso-preview__main"><div class="recurso-preview__header"><div class="recurso-preview__type" style="color:var(--salvia-dark)">TEORÍA · PDF</div><h2 class="recurso-preview__title">Círculo de quintas</h2><div class="recurso-preview__meta-row"><span>Guía visual</span><span>2 páginas</span></div></div><div class="recurso-preview__content"><div class="recurso-preview__tab-content" style="text-align:center;padding:40px"><svg width="200" height="200" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="90" stroke="#2C3E34" stroke-width="2"/><circle cx="100" cy="100" r="65" stroke="#5E7A66" stroke-width="1.5" opacity=".5"/><text x="100" y="20" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">C</text><text x="145" y="30" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">G</text><text x="180" y="60" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">D</text><text x="190" y="105" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">A</text><text x="180" y="150" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">E</text><text x="145" y="180" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">B</text><text x="100" y="195" text-anchor="middle" fill="#C1683F" font-family="Cormorant Garamond" font-size="16" font-weight="600">F#/Gb</text><text x="55" y="180" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">Db</text><text x="20" y="150" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">Ab</text><text x="10" y="105" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">Eb</text><text x="20" y="60" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">Bb</text><text x="55" y="30" text-anchor="middle" fill="#2A2521" font-family="Cormorant Garamond" font-size="16" font-weight="600">F</text></svg></div></div><div class="recurso-preview__action"><button class="btn-primary" data-i18n="recursoPreview.download">Descargar PDF</button></div></div>
+          <div><div class="recurso-preview__sidebar-section"><div class="recurso-preview__sidebar-title" data-i18n="recursoPreview.related">Recursos relacionados</div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Cambios de acorde</div><div class="recurso-preview__related-meta">Ejercicio</div></div></div></div>
+        </div>
+      </div>
+      <div class="recurso-preview__content-block" data-recurso="fingerstyle-zero">
+        <div class="recurso-preview__layout">
+          <div class="recurso-preview__main"><div class="recurso-preview__header"><div class="recurso-preview__type">VIDEO · 22 MIN</div><h2 class="recurso-preview__title">Fingerstyle desde cero</h2><div class="recurso-preview__meta-row"><span>Curso</span><span>8 lecciones</span></div></div><div class="recurso-preview__content"><div class="recurso-preview__video-placeholder" style="background:linear-gradient(135deg,#C1683F,#7C9885)"><div class="recurso-preview__play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="#FBF7EF"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div><div class="recurso-preview__sidebar-section"><div class="recurso-preview__sidebar-title" data-i18n="recursoPreview.related">Recursos relacionados</div><div class="recurso-preview__related-card" data-nav="recursos"><div class="recurso-preview__related-name">Romance Anónimo</div><div class="recurso-preview__related-meta">Partitura · PDF</div></div></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 6: PROGRESO
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-progreso" class="screen">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar__brand"><svg width="28" height="28" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="31" r="16.5" stroke="#2C3E34" stroke-width="2"/><line x1="28" y1="16" x2="28" y2="46" stroke="#2C3E34" stroke-width="1.4" opacity=".55"/><path d="M28 16 C28 9 28 5 28 3" stroke="#5E7A66" stroke-width="2" stroke-linecap="round"/><path d="M28 9 C32 7 36 8 38 6 C37 11 32 12 28 11Z" fill="#C1683F"/></svg><span class="sidebar__brand-text">Lupero</span></a>
+      <div class="sidebar__item" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="sidebar.inicio">Inicio</span></div>
+      <div class="sidebar__item" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="sidebar.agendar">Agendar</span></div>
+      <div class="sidebar__item" data-screen="mis-clases"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span data-i18n="sidebar.misClases">Mis clases</span></div>
+      <div class="sidebar__item" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="sidebar.recursos">Recursos</span></div>
+      <div class="sidebar__item active" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span data-i18n="sidebar.progreso">Progreso</span></div>
+      <div class="sidebar__lang"><div class="lang-toggle lang-toggle--light"><span class="lang-toggle__btn active" data-lang="es">ES</span><span class="lang-toggle__btn" data-lang="en">EN</span></div></div>
+      <div class="sidebar__user"><div class="sidebar__avatar"></div><div><div class="sidebar__user-name">Camila R.</div><div class="sidebar__user-level">Nivel · Intermedio</div></div></div>
+    </aside>
+    <main class="app-main">
+      <h1 class="progreso__title" data-i18n="progreso.title">Tu progreso</h1>
+      <div class="progreso__stats">
+        <div class="progreso__stat"><div class="progreso__stat-value">38.5</div><div class="progreso__stat-label" data-i18n="progreso.hours">Horas totales</div></div>
+        <div class="progreso__stat"><div class="progreso__stat-value">24</div><div class="progreso__stat-label" data-i18n="progreso.classes">Clases completadas</div></div>
+        <div class="progreso__stat"><div class="progreso__stat-value">7</div><div class="progreso__stat-label" data-i18n="progreso.songs">Canciones</div></div>
+        <div class="progreso__stat"><div class="progreso__stat-value">12</div><div class="progreso__stat-label" data-i18n="progreso.streak">Racha actual</div></div>
+      </div>
+      <h2 class="progreso__section-title" data-i18n="progreso.weeklyTitle">Práctica semanal</h2>
+      <div class="weekly-chart"><div class="weekly-chart__bars">
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar" style="height:45%"></div></div><div class="weekly-chart__bar-label" data-i18n="day.lun">Lun</div></div>
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar" style="height:70%"></div></div><div class="weekly-chart__bar-label" data-i18n="day.mar">Mar</div></div>
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar" style="height:30%"></div></div><div class="weekly-chart__bar-label" data-i18n="day.mie">Mié</div></div>
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar" style="height:85%"></div></div><div class="weekly-chart__bar-label" data-i18n="day.jue">Jue</div></div>
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar" style="height:55%"></div></div><div class="weekly-chart__bar-label" data-i18n="day.vie">Vie</div></div>
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar" style="height:95%"></div></div><div class="weekly-chart__bar-label" data-i18n="day.sab">Sáb</div></div>
+        <div class="weekly-chart__bar-col"><div class="weekly-chart__bar-track"><div class="weekly-chart__bar weekly-chart__bar--today" style="height:40%"></div></div><div class="weekly-chart__bar-label">Dom</div></div>
+      </div></div>
+      <h2 class="progreso__section-title" data-i18n="progreso.skillsTitle">Habilidades</h2>
+      <div class="skills-grid">
+        <div class="skill-row"><div class="skill-row__header"><span class="skill-row__name" data-i18n="progreso.rhythm">Ritmo</span><span class="skill-row__pct">78%</span></div><div class="skill-row__bar"><div class="skill-row__bar-fill" style="width:78%"></div></div></div>
+        <div class="skill-row"><div class="skill-row__header"><span class="skill-row__name" data-i18n="progreso.chords">Acordes</span><span class="skill-row__pct">65%</span></div><div class="skill-row__bar"><div class="skill-row__bar-fill" style="width:65%"></div></div></div>
+        <div class="skill-row"><div class="skill-row__header"><span class="skill-row__name" data-i18n="progreso.fingerstyle">Fingerstyle</span><span class="skill-row__pct">42%</span></div><div class="skill-row__bar"><div class="skill-row__bar-fill" style="width:42%"></div></div></div>
+        <div class="skill-row"><div class="skill-row__header"><span class="skill-row__name" data-i18n="progreso.theory">Teoría</span><span class="skill-row__pct">55%</span></div><div class="skill-row__bar"><div class="skill-row__bar-fill" style="width:55%"></div></div></div>
+      </div>
+      <h2 class="progreso__section-title" data-i18n="progreso.achievementsTitle">Logros</h2>
+      <div class="achievements">
+        <div class="achievement"><div class="achievement__icon achievement__icon--gold">&#127928;</div><div><div class="achievement__name">Primera clase</div></div></div>
+        <div class="achievement"><div class="achievement__icon achievement__icon--green">&#x1F525;</div><div><div class="achievement__name">7 días seguidos</div></div></div>
+        <div class="achievement"><div class="achievement__icon achievement__icon--gold">&#127925;</div><div><div class="achievement__name">5 canciones</div></div></div>
+        <div class="achievement"><div class="achievement__icon achievement__icon--red">&#9996;&#65039;</div><div><div class="achievement__name">Primer fingerstyle</div></div></div>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-tabs"><div class="mobile-tab" data-screen="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span data-i18n="mobile.inicio">Inicio</span></div><div class="mobile-tab" data-screen="agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M8 3v4M16 3v4"/></svg><span data-i18n="mobile.agendar">Agendar</span></div><div class="mobile-tab" data-screen="recursos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11a2 2 0 012 2v12H6a2 2 0 01-2-2z"/><path d="M8 9h6M8 13h6"/></svg><span data-i18n="mobile.recursos">Recursos</span></div><div class="mobile-tab active" data-screen="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-i18n="mobile.perfil">Perfil</span></div></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCREEN 7: CLASE EN VIVO (DARK)
+     ═══════════════════════════════════════════════════════════ -->
+<section id="screen-live" class="screen">
+  <div class="live-layout">
+    <div class="live-stage">
+      <div class="live-stage__header">
+        <div class="live-stage__info">
+          <span class="live-stage__live-badge">&#9679; EN VIVO</span>
+          <span class="live-stage__title" data-i18n="live.title">Fingerstyle — patrones de viaje</span>
+        </div>
+        <div class="live-stage__timer"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>32:14</div>
+      </div>
+      <div class="live-video">
+        <svg class="live-video__bg" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="live-glow" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#E0A95E" stop-opacity=".22"/><stop offset="70%" stop-color="#1A2620" stop-opacity="0"/></radialGradient></defs><rect width="900" height="540" fill="url(#live-glow)"/><path d="M0 430 C180 390 300 430 460 418 C620 406 720 388 900 410 L900 540 L0 540Z" fill="#22302A"/></svg>
+        <div class="live-video__label" data-i18n="live.label">Maestro · vista guitarra</div>
+        <div class="live-video__placeholder" data-i18n="live.placeholder">video del maestro · placeholder</div>
+        <div class="live-video__self"><div class="live-video__self-label" data-i18n="live.self">Tú (Camila)</div></div>
+      </div>
+      <div class="live-controls">
+        <div class="live-controls__btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4ECE0" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></div>
+        <div class="live-controls__btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4ECE0" stroke-width="1.8"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div>
+        <div class="live-controls__btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4ECE0" stroke-width="1.8"><path d="M4 7h16v10H4z"/><path d="M9 17v3h6v-3"/></svg></div>
+        <div class="live-controls__leave" data-nav="dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8l-8 8M8 8l8 8"/></svg><span data-i18n="live.leave">Salir</span></div>
+      </div>
+    </div>
+    <div class="live-panel">
+      <div class="live-panel__tabs">
+        <span class="live-panel__tab active" data-tab="partitura" data-i18n="live.scoreTab">Partitura</span>
+        <span class="live-panel__tab" data-tab="notas" data-i18n="live.notesTab">Notas</span>
+        <span class="live-panel__tab" data-tab="chat" data-i18n="live.chatTab">Chat</span>
+      </div>
+      <div class="live-panel__body">
+        <div class="live-panel__tab-content active" data-tab="partitura">
+          <div class="live-panel__score"><div class="live-panel__score-label" data-i18n="live.scoreLabel">TAB · COMPÁS 1–4</div><pre>e|---0---3---0-------|
+B|-----1-------1-----|
+G|---0---0---0---0---|
+D|-2-----------------|
+A|-------------------|
+E|-3-----3-----------|</pre></div>
+          <div class="live-panel__note" data-i18n-html="live.teacherNote"><b>Maestro:</b> Relaja el pulgar y deja sonar las cuerdas al aire. Respira en cada compás.</div>
+        </div>
+        <div class="live-panel__tab-content" data-tab="notas"><div class="live-panel__notes-content" data-i18n-html="live.notesContent"><p>Enfocarse en la relajación del pulgar derecho.</p><p>Practicar los compases 1–4 lentamente antes de subir el tempo.</p><p>Tarea: grabar 30 segundos del patrón y enviarlo antes del viernes.</p></div></div>
+        <div class="live-panel__tab-content" data-tab="chat"><div class="live-panel__chat-messages"><div class="live-panel__chat-msg"><b>Maestro:</b> Vamos a empezar con el patrón de hoy. ¿Lista?</div><div class="live-panel__chat-msg"><b>Camila:</b> ¡Lista! El del viaje, ¿verdad?</div><div class="live-panel__chat-msg"><b>Maestro:</b> Exacto. Recuerda: pulgar relajado, sin prisa.</div></div></div>
+      </div>
+      <div class="live-panel__chat-input"><input class="live-panel__chat-field" type="text" data-i18n-placeholder="live.chatPlaceholder" placeholder="Escribe un mensaje…"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script src="js/i18n.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/agendar.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

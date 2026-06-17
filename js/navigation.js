@@ -16,9 +16,7 @@ function navigateTo(screenId) {
     tab.classList.toggle('active', tab.dataset.screen === screenId);
   });
 
-  if (screenId === 'landing') {
-    document.querySelectorAll('.top-nav').forEach(n => n.style.display = '');
-  }
+  history.replaceState(null, '', '#' + screenId);
 }
 
 function initNavigation() {
@@ -31,17 +29,18 @@ function initNavigation() {
 
   document.querySelectorAll('.sidebar__item').forEach(item => {
     item.addEventListener('click', () => {
-      if (item.dataset.screen) {
-        navigateTo(item.dataset.screen);
-      }
+      if (item.dataset.screen) navigateTo(item.dataset.screen);
     });
   });
 
   document.querySelectorAll('.mobile-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      if (tab.dataset.screen) {
-        navigateTo(tab.dataset.screen);
-      }
+      if (tab.dataset.screen) navigateTo(tab.dataset.screen);
     });
   });
+
+  const hash = location.hash.replace('#', '');
+  if (hash && document.getElementById('screen-' + hash)) {
+    navigateTo(hash);
+  }
 }
