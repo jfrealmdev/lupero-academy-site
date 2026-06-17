@@ -1,0 +1,51 @@
+:root {
+  /* Palette */
+  --papel: #F4ECE0;
+  --papel-soft: #FBF7EF;
+  --arcilla: #C1683F;
+  --arcilla-dark: #A4502B;
+  --salvia: #7C9885;
+  --salvia-dark: #5E7A66;
+  --salvia-light: #9FB39A;
+  --bosque: #2C3E34;
+  --bosque-mid: #3A4F42;
+  --bosque-light: #42594B;
+  --ocre: #D89B53;
+  --ocre-light: #E0A95E;
+  --ocre-glow: #F2C078;
+  --tinta: #2A2521;
+
+  /* Immersive backgrounds */
+  --bg-deep: #1E2A24;
+  --bg-gradient-top: #26352D;
+  --bg-gradient-bottom: #18221D;
+  --bg-sidebar: #1C2820;
+  --bg-card: rgba(244, 236, 224, 0.06);
+  --bg-card-hover: rgba(244, 236, 224, 0.10);
+  --border-subtle: rgba(244, 236, 224, 0.08);
+  --border-card: rgba(244, 236, 224, 0.12);
+
+  /* Text on dark */
+  --text-primary: #F4ECE0;
+  --text-secondary: #C9D2C5;
+  --text-muted: #9FB39A;
+  --text-dim: #7E8C82;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Hanken Grotesk', sans-serif;
+
+  /* Spacing */
+  --sidebar-width: 236px;
+  --nav-height: 72px;
+  --radius-sm: 13px;
+  --radius-md: 18px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
